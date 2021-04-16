@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="061299e6-ea1a-4d9e-a9e8-fca85f95225f" name="Default Changelist" comment="" />
+    <list default="true" id="061299e6-ea1a-4d9e-a9e8-fca85f95225f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/tasks/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/tasks/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/tasks/CreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/tasks/CreateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/TaskInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/TaskInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/TaskRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_15_192133_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_15_192133_create_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/task/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/panel/tasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/panel/tasks.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +30,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -126,10 +146,17 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1rDZmlIuFyevhYu5nSriPWk0hzW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../miror" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/errors" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.VCS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/errors" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -160,7 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618512781914</updated>
       <workItem from="1618512784238" duration="6861000" />
-      <workItem from="1618560282323" duration="9158000" />
+      <workItem from="1618560282323" duration="27515000" />
     </task>
     <servers />
   </component>
@@ -170,6 +197,17 @@
       <list>
         <option value="$PROJECT_DIR$/node_modules/concat/index.js" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
 </project>

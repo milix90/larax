@@ -10,24 +10,25 @@ use Illuminate\Http\Request;
 
 class TaskRepository implements TaskInterface
 {
-
     public function all()
     {
-        $tasks = Task::query()->latest()->paginate(10);
-
-        return $tasks;
+        $all = Task::query()->latest();
+        $tasks = auth()->user()->role === 1 ? $all : $all->where('assign_id', auth()->user()->id);
+        return $tasks->paginate(10);
     }
 
     public function spanShot()
     {
-        $snap = Task::query()->latest()->take(4);
+        $snap = Task::all()->count() !== 0 ?
+            Task::query()->latest()->get()->take(4) :
+            'No Tasks Found!';
 
         return $snap;
     }
 
-    public function GetTask(Request $request)
+    public function GetTask($id)
     {
-        $task = Task::query()->findOrFail($request['id']);
+        $task = Task::query()->findOrFail($id);
 
         return $task;
     }
@@ -36,7 +37,9 @@ class TaskRepository implements TaskInterface
     {
         Task::query()->create([
             'title' => $request['title'],
-            'description' => $request['description']
+            'description' => $request['description'],
+            'user_id' => auth()->user()->id,
+            'assign_id' => auth()->user()->role === 0 || !is_numeric($request['assign_id']) ? auth()->user()->id : $request['assign_id']
         ]);
     }
 
@@ -50,7 +53,8 @@ class TaskRepository implements TaskInterface
             if ($newData instanceof Task) {
                 $newData->update([
                     'title' => $request['title'],
-                    'description' => $request['description']
+                    'description' => $request['description'],
+                    'assign_id' => auth()->user()->role === 0 || $request['assign_id'] === null ? auth()->user()->id : $request['assign_id']
                 ]);
             }
         } catch (\Exception $e) {
@@ -60,9 +64,18 @@ class TaskRepository implements TaskInterface
         return $msg;
     }
 
+    public function TaskStatus($id)
+    {
+        $task = Task::query()->find($id);
+
+        if ($task instanceof Task && $task['status'] === 0) {
+            $task['status'] = 1;
+            $task->save();
+        }
+    }
+
     public function DeleteTask($id)
     {
-        $msg = 'Task deleted successfully';
         try {
             $task = Task::query()->findOrFail($id);
 
@@ -70,9 +83,7 @@ class TaskRepository implements TaskInterface
                 $task->delete();
             }
         } catch (\Exception $e) {
-            $msg = 'Error! Not a correct instance.';
+            return 'Error! Not a correct instance.';
         }
-
-        return $msg;
     }
 }

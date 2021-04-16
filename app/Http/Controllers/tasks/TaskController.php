@@ -7,6 +7,7 @@ use App\Http\Requests\tasks\CreateRequest;
 use App\Http\Requests\tasks\GetOneRequest;
 use App\Http\Requests\tasks\UpdateRequest;
 use App\Models\Task;
+use App\Models\User;
 use App\Repositories\TaskRepository;
 use Illuminate\Http\Request;
 
@@ -21,43 +22,45 @@ class TaskController extends Controller
 
     public function index()
     {
-        return view('task.all', compact($this->task->all()));
+        $tasks = $this->task->all();
+        return view('task.all', compact('tasks'));
     }
 
-    public function get(GetOneRequest $request)
+    public function get($id)
     {
-        return view('task.show', compact($this->task->GetTask($request)));
+        return view('task.show', compact($this->task->GetTask($id)));
     }
 
-    public function create()
+    public function create(CreateRequest $request)
     {
-        return view('task.create');
+        $this->task->CreateTask($request);
+        return back();
     }
 
-    public function save(CreateRequest $request)
+    public function edit($id)
     {
-        dd($request->all());
-        /*$this->task->CreateTask($request);
-
-        return back();*/
-    }
-
-    public function edit(GetOneRequest $request)
-    {
-        $task = $this->task->GetTask($request);
-        return view('task.edit', compact($task));
+        $task = $this->task->GetTask($id);
+        $users = User::query()->where('role','<>',1)->get();
+        return view('task.edit', compact('task','users'));
     }
 
     public function update(UpdateRequest $request)
     {
         $this->task->UpdateTask($request);
 
-        return redirect(route('tasks'));
+        return redirect(route('task.all'));
     }
 
-    public function delete(GetOneRequest $request)
+    public function status($id)
     {
-        $this->task->DeleteTask($request);
+        $this->task->TaskStatus($id);
+
+        return back();
+    }
+
+    public function delete($id)
+    {
+        $this->task->DeleteTask($id);
 
         return back();
     }

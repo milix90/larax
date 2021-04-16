@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Repositories\TaskRepository;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -23,11 +24,12 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return Renderable
+     * @return void
      */
     public function index()
     {
         $lastTasks = $this->tasks->spanShot();
-        return view('home', compact($lastTasks));
+        $users = User::query()->where('role','<>',1)->get();
+        return view('home', compact('lastTasks','users'));
     }
 }

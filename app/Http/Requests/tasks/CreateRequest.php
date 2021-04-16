@@ -23,19 +23,9 @@ class CreateRequest extends FormRequest
      */
     public function rules()
     {
-        if (auth()->user()->role === 1) {
-            $rules = [
-                'title' => 'required',
-                'description' => 'required',
-                'user_id' => 'required',
-            ];
-        } else {
-            $rules = [
-                'title' => 'required',
-                'description' => 'required',
-            ];
-        }
-
-        return $rules;
+        return [
+            'title' => 'required',
+            'description' => 'required',
+        ];
     }
 }
