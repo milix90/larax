@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => 'auth:web', 'prefix' => 'tasks', 'namespace' => 'tasks'], function () {
+Route::group(['middleware' => ['auth:web','activeUser'], 'prefix' => 'tasks', 'namespace' => 'tasks'], function () {
     Route::get('/', [App\Http\Controllers\tasks\TaskController::class, 'index'])->name('task.all');
     Route::get('/task/{id}', [App\Http\Controllers\tasks\TaskController::class, 'get'])->name('task.show');
     Route::post('/create-task', [App\Http\Controllers\tasks\TaskController::class, 'create'])->name('task.create');

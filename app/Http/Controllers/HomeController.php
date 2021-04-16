@@ -29,7 +29,17 @@ class HomeController extends Controller
     public function index()
     {
         $lastTasks = $this->tasks->spanShot();
-        $users = User::query()->where('role','<>',1)->get();
-        return view('home', compact('lastTasks','users'));
+        $users = User::query()->where('role', '<>', 1)->get();
+
+        return view('home', compact('lastTasks', 'users'));
+    }
+
+    public function activationError()
+    {
+        if (auth()->user()->activate === 1){
+            return redirect(route('home'));
+        }
+
+        return view('errors.activation');
     }
 }

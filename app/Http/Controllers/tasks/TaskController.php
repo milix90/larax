@@ -40,6 +40,7 @@ class TaskController extends Controller
     public function edit($id)
     {
         $task = $this->task->GetTask($id);
+        //list of employees to assign task to them by admin
         $users = User::query()->where('role','<>',1)->get();
         return view('task.edit', compact('task','users'));
     }
@@ -47,21 +48,18 @@ class TaskController extends Controller
     public function update(UpdateRequest $request)
     {
         $this->task->UpdateTask($request);
-
         return redirect(route('task.all'));
     }
 
     public function status($id)
     {
         $this->task->TaskStatus($id);
-
         return back();
     }
 
     public function delete($id)
     {
         $this->task->DeleteTask($id);
-
         return back();
     }
 }

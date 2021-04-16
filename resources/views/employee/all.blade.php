@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','All Tasks')
+@section('title','Users List')
 @section('content')
     @include('errors.errors')
     <div class="container">
@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        All Tasks
+                        Users list : Admin & Employees
                         <span class="float-right">
                             <a href="{{route('home')}}" class="btn btn-primary">Back to Home</a>
                         </span>
@@ -17,17 +17,17 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">User</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Manage Role</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Start/End</th>
+                                <th scope="col">Join Date</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($tasks as $task)
-                                @include('task.sections.tableRow',['task' => $task])
+                            @foreach($users as $user)
+                                @include('employee.sections.tableRow',['employee' => $user])
                             @endforeach
                             </tbody>
                         </table>
@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            {!! $tasks->render() !!}
+            {!! $users->render() !!}
         </div>
     </div>
 @endsection
