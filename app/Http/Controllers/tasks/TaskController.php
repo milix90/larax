@@ -27,10 +27,7 @@ class TaskController extends Controller
 
     public function index()
     {
-        $tasks['tasks'] = $this->task->all();
-        $tasks['users'] = $this->user->searchUsers();
-        $tasks['startDate'] = $this->taskStartDates();
-
+        $tasks = $this->taskResults($this->task->all());
         return view('task.all', compact('tasks'));
     }
 
@@ -64,6 +61,12 @@ class TaskController extends Controller
     {
         $this->task->TaskStatus($id);
         return back();
+    }
+
+    public function search(Task $task,Request $request)
+    {
+        $tasks = $this->taskResults($task->searchTasks());
+        return view('task.searchRes', compact('tasks'));
     }
 
     public function delete($id)

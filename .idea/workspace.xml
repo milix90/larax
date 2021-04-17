@@ -3,21 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="061299e6-ea1a-4d9e-a9e8-fca85f95225f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/tasks/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/tasks/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/TaskRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Traits/TaskHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/TaskHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employee/sections/tableRow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/sections/tableRow.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/errors/activation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/errors/activation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/task/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/all.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/task/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/task/sections/tableRow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/sections/tableRow.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/panel/employees.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/panel/employees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/task/sections/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/sections/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/panel/tasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/panel/tasks.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -151,11 +140,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/errors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/task" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.VCS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/task" />
       <recent name="$PROJECT_DIR$/resources/views/errors" />
     </key>
   </component>
@@ -189,7 +179,8 @@
       <updated>1618512781914</updated>
       <workItem from="1618512784238" duration="6861000" />
       <workItem from="1618560282323" duration="37106000" />
-      <workItem from="1618638875766" duration="14209000" />
+      <workItem from="1618638875766" duration="14410000" />
+      <workItem from="1618664746839" duration="7769000" />
     </task>
     <servers />
   </component>
