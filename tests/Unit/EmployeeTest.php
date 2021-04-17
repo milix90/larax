@@ -9,10 +9,11 @@ class EmployeeTest extends TestCase
 {
     public function test_create_new_user()
     {
-        $user = User::create([
+        $user = new User();
+        $user->create([
             'name' => 'admin',
             'email' => 'admin@admin.com',
-            'password' => '123123123'
+            'password' => '123123123',
         ]);
 
         $this->assertTrue(!!$user);

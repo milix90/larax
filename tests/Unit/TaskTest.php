@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class TaskTest extends TestCase
 {
-    public function test_create_task()
+    public function test_create_new_task()
     {
         $task = new Task();
         $task->create([
