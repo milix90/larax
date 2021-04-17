@@ -23,16 +23,15 @@ class TaskRepository implements TaskInterface
     public function spanShot()
     {
         //display last 4 tasks in home page
+        $msg = 'No Task Found. Insert one now.';
         $tasks = Task::query()->latest();
-        if ($tasks->count() !== 0) {
-            $snap = auth()->user()->role === 1 ? $tasks :
+
+        $res = (auth()->user()->role === 1) ? $tasks :
                 $tasks->where('assign_id', auth()->user()->id);
 
-            $res = $snap->get()->take(4);
-        } else {
-            $res = 'No Tasks Found!';
-        }
-        return $res;
+        $snap = $res->count() > 0 ? $res->get()->take(4) : $msg;
+
+        return $snap;
     }
 
     public function GetTask($id)

@@ -1,21 +1,26 @@
 <tr>
     <th scope="row">{{$task->id}}</th>
-    <td>{{$task->title}}</td>
+    <td>
+        <a href="{{ route('task.show', ['id' => $task->id]) }}">{{$task->title}}</a>
+    </td>
     <td>{{\Illuminate\Support\Str::limit($task->description,25)}}</td>
     <td>
         {{$task->user->name}}
         <small>
-                                            <span class="badge badge-warning">
-                                                {{$task->user->role === 0 ? 'employee' : 'admin'}}
-                                            </span><br>
-            {{$task->assignUser($task->user_id,$task->assign_id)}}
+            <span class="badge badge-warning">
+                {{$task->user->role === 0 ? 'employee' : 'admin'}}
+            </span>
+            <br>
+            <span class="badge badge-success">
+                {{$task->assignUser($task->user_id,$task->assign_id)}}
+            </span>
         </small>
     </td>
     <td>
         <small>
-            <a href="{{ route('task.edit',['id' => $task->id ]) }}"
-               class="btn btn-sm btn-primary pl-3 pr-3">Edit</a>
             @if($task->user_id === auth()->user()->id)
+                <a href="{{ route('task.edit',['id' => $task->id ]) }}"
+                   class="btn btn-sm btn-primary pl-3 pr-3">Edit</a>
                 <form action="{{route('task.delete',['id' => $task->id])}}"
                       method="post">
                     @csrf
@@ -46,7 +51,7 @@
     </td>
     <td>
         <small>
-            [{{ \Carbon\Carbon::parse($task->created_at)->format('Y-m-d_h:i') }}]  -
+            [{{ \Carbon\Carbon::parse($task->created_at)->format('Y-m-d_h:i') }}] -
             [{{ \Carbon\Carbon::parse($task->created_at) <
             \Carbon\Carbon::parse($task->updated_at) &&
              $task->status === 1 ?

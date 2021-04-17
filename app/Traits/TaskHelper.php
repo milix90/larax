@@ -4,7 +4,9 @@
 namespace App\Traits;
 
 
+use App\Models\Task;
 use App\Models\User;
+use Carbon\Carbon;
 
 trait TaskHelper
 {
@@ -18,5 +20,16 @@ trait TaskHelper
         }
 
         return $name;
+    }
+
+    public function taskStartDates()
+    {
+        $dates = Task::all()->map(function ($item) {
+            return Carbon::parse($item['created_at'])->format('Y-m-d');
+        });
+
+        $dates = array_unique($dates->toArray());
+
+        return $dates;
     }
 }

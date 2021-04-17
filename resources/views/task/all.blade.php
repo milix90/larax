@@ -13,6 +13,10 @@
                         </span>
                     </div>
                     <div class="card-body">
+                        @if(auth()->user()->role === 1)
+                            @include('task.sections.search',['users' => $tasks['users'],'start' => $tasks['startDate']])
+                            <hr>
+                        @endif
                         <table class="table table-striped">
                             <thead>
                             <tr>
@@ -26,7 +30,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($tasks as $task)
+                            @foreach($tasks['tasks'] as $task)
                                 @include('task.sections.tableRow',['task' => $task])
                             @endforeach
                             </tbody>
@@ -36,7 +40,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            {!! $tasks->render() !!}
+            {!! $tasks['tasks']->render() !!}
         </div>
     </div>
 @endsection

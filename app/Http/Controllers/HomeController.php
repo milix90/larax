@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Repositories\TaskRepository;
-use Illuminate\Contracts\Support\Renderable;
+use App\Traits\HomeHelper;
 
 class HomeController extends Controller
 {
+    use HomeHelper;
+
     private $tasks;
 
     /**
@@ -32,14 +34,5 @@ class HomeController extends Controller
         $users = User::query()->where('role', '<>', 1)->get();
 
         return view('home', compact('lastTasks', 'users'));
-    }
-
-    public function activationError()
-    {
-        if (auth()->user()->activate === 1){
-            return redirect(route('home'));
-        }
-
-        return view('errors.activation');
     }
 }

@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Account Error</div>
-                    <div class="card-body">Your account have not been activated yet. Please login later.</div>
+                    <div class="card-body">Your account is inactive. Please login later.</div>
                 </div>
             </div>
         </div>

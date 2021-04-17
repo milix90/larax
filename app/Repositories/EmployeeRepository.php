@@ -28,4 +28,10 @@ class EmployeeRepository implements EmployeeInterface
         $user['role'] = ($user['role'] === 0) ? 1 : 0;
         $user->save();
     }
+
+    public function searchUsers()
+    {
+        $users = User::query()->latest()->whereRole('<>','1')->get();
+        return $users;
+    }
 }

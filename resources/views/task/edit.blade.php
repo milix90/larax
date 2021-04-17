@@ -4,23 +4,18 @@
     @include('errors.errors')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
                         Edit Task : {{$task->title}}
-                        <span class="float-right">
-                            <a href="{{route('task.all')}}" class="btn btn-primary">Back to Tasks</a>
-                        </span>
                     </div>
                     <div class="card-body">
                         <form action="{{route('task.update', ['id' => $task->id])}}" method="post">
                             @csrf
                             @method('put')
                             <input type="hidden" name="id" value="{{$task->id}}">
-                            <label>Title
-                                <input type="text" name="title" class="form-control"
-                                       value="{{isset($task->title) ? $task->title : old('title')}}">
-                            </label>
+                            <input type="text" name="title" class="form-control mb-2" placeholder="Title"
+                                   value="{{isset($task->title) ? $task->title : old('title')}}">
                             <textarea name="description"
                                       cols="10" rows="5"
                                       class="form-control"
@@ -36,6 +31,7 @@
                                 </select>
                             @endif
                             <button class="mt-3 btn btn-success">Update</button>
+                            <a href="{{route('task.all')}}" class="mt-3 ml-2 btn btn-primary">Back</a>
                         </form>
                     </div>
                 </div>
