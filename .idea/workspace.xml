@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="061299e6-ea1a-4d9e-a9e8-fca85f95225f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/tasks/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/tasks/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/TaskHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/TaskHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/task/sections/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/sections/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/panel/tasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/panel/tasks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +178,7 @@
       <workItem from="1618512784238" duration="6861000" />
       <workItem from="1618560282323" duration="37106000" />
       <workItem from="1618638875766" duration="14410000" />
-      <workItem from="1618664746839" duration="7769000" />
+      <workItem from="1618664746839" duration="11888000" />
     </task>
     <servers />
   </component>
